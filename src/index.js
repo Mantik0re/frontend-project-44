@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+import readlineSync from 'readline-sync';
+
+
+const playGame = (userName, checkingFunc) => {
+
+  let correctAnswersCount = 0;
+  while (correctAnswersCount < 3) {
+    if (checkingFunc() === false) {
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+    correctAnswersCount += 1;
+
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
+
+export default playGame;
