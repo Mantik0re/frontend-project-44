@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-// import welcomeMessage from '../cli';
+import welcomeMessage from '../cli.js';
 
 
 const randomNumber = () => {

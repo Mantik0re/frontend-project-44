@@ -1,39 +1,63 @@
-#!/usr/bin/env node
+// #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-// import welcomeMessage from '../cli';
+import welcomeMessage from '../cli.js';
 
 
-const randomNumber = () => {
-    let symbols = ['+', '-', '*'];
-    let i = Math.floor(Math.random() * symbols.length);
+const randomExpression = () => {
+    let operators = ['+', '-', '*'];
+    let randomIndex = Math.floor(Math.random() * operators.length);
 
-    let firstNum = Math.floor(Math.random() * 10);
-    let secondNum = Math.floor(Math.random() * 10);
+    let firstNumber = Math.floor(Math.random() * 10);
+    let secondNumber = Math.floor(Math.random() * 10);
 
-    console.log(`${firstNum} ${symbols[i]} ${secondNum}`);
-
-    return `${firstNum} ${symbols[i]} ${secondNum}`;
-}
-
-
-
-const IsNumberEven = (num) => {
-    if (num) {
-        return Number(num);
+    switch (operators[randomIndex]) {
+        case '+':
+            return `${firstNumber} + ${secondNumber}`;
+            break;
+        case '-':
+            return `${firstNumber} - ${secondNumber}`;
+            break;
+        case '*':
+            return `${firstNumber} * ${secondNumber}`;
+            break;
     }
 }
 
+const executeExpression = (expression) => {
+    // let expression = randomNumber();
+    const parts = expression.split(' ');
+    const left = parseInt(parts[0], 10);
+    const right = parseInt(parts[2], 10);
+    const operator = parts[1];
+
+    let result;
+    switch (operator) {
+        case '+':
+            result = left + right;
+            break;
+        case '-':
+            result = left - right;
+            break;
+        case '*':
+            result = left * right;
+            break;
+    }
+    return result;
+}
+
+
+
 const checkingNumber = () => {
     console.log('What is the result of the expression?');
-    let checkingNum = randomNumber()
+    let checkingNum = randomExpression();
     console.log(`Question: ${checkingNum}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === IsNumberEven(checkingNum)) {
+    if (answer == executeExpression(checkingNum)) {
         console.log('Correct!');
         return true;
     } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${IsNumberEven(checkingNum)}'.`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${executeExpression(checkingNum)}'.`);
         return false;
     }
 }
