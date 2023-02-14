@@ -1,11 +1,6 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import welcomeMessage from '../cli.js';
+import randomNumber from '../utils.js';
 
-
-const randomNumber = () => {
-        return Math.floor(Math.random() * 100);
-}
 
 const IsNumberEven = (num) => {
         if (num % 2 === 0) {
@@ -29,6 +24,5 @@ const checkingNumber = () => {
                 return false;
         }
 }
-
 
 export default checkingNumber;
