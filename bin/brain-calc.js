@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 
 import welcomeMessage from '../src/cli.js';
 import playGame from '../src/index.js';

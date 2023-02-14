@@ -1,6 +1,4 @@
-// #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import welcomeMessage from '../cli.js';
 
 
 const randomExpression = () => {
@@ -24,7 +22,6 @@ const randomExpression = () => {
 }
 
 const executeExpression = (expression) => {
-    // let expression = randomNumber();
     const parts = expression.split(' ');
     const left = parseInt(parts[0], 10);
     const right = parseInt(parts[2], 10);
