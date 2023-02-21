@@ -7,7 +7,6 @@ const playGame = (userName, checkingFunc) => {
       return;
     }
     correctAnswersCount += 1;
-
   }
   console.log(`Congratulations, ${userName}!`);
 };

@@ -8,4 +8,3 @@ const welcomeMessage = () => {
 };
 
 export default welcomeMessage;
-
