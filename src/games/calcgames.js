@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 
-
 const randomExpression = () => {
     let operators = ['+', '-', '*'];
     let randomIndex = Math.floor(Math.random() * operators.length);
@@ -11,15 +10,15 @@ const randomExpression = () => {
     switch (operators[randomIndex]) {
         case '+':
             return `${firstNumber} + ${secondNumber}`;
-            break;
+
         case '-':
             return `${firstNumber} - ${secondNumber}`;
-            break;
+
         case '*':
             return `${firstNumber} * ${secondNumber}`;
-            break;
+
     }
-}
+};
 
 const executeExpression = (expression) => {
     const parts = expression.split(' ');
@@ -40,9 +39,7 @@ const executeExpression = (expression) => {
             break;
     }
     return result;
-}
-
-
+};
 
 const checkingNumber = () => {
     console.log('What is the result of the expression?');
@@ -57,7 +54,6 @@ const checkingNumber = () => {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was '${executeExpression(checkingNum)}'.`);
         return false;
     }
-}
-
+};
 
 export default checkingNumber;

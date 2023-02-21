@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import randomNumber from '../utils.js';
 
-
 const findCommonDivisor = (firstNum, secondNum) => {  // https://gist.github.com/ivanafanasyev/407e46849726e9ce1e53c5b19ab0d968
     if (!firstNum) {
         return firstNum;
@@ -17,7 +16,7 @@ const findCommonDivisor = (firstNum, secondNum) => {  // https://gist.github.com
         }
     }
     return firstNum + secondNum;
-}
+};
 
 const checkingNumber = () => {
     console.log('Find the greatest common divisor of given numbers.');
@@ -32,6 +31,6 @@ const checkingNumber = () => {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was '${findCommonDivisor(...checkingNums)}'.`);
         return false;
     }
-}
+};
 
 export default checkingNumber;
