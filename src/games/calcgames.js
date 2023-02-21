@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const randomExpression = () => {
     let operators = ['+', '-', '*'];
-    let randomIndex = Math.floor(Math.random() * operators.length);
+    const randomIndex = Math.floor(Math.random() * operators.length);
 
     let firstNumber = Math.floor(Math.random() * 10);
     let secondNumber = Math.floor(Math.random() * 10);
