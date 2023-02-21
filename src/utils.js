@@ -1,5 +1,5 @@
 const randomNumber = (maxValue = 100, minValue = 1) => {
-  return Math.floor(Math.random() * (maxValue - minValue) + minValue)
-}
+  return Math.floor(Math.random() * (maxValue - minValue) + minValue);
+};
 
-export default randomNumber
+export default randomNumber;

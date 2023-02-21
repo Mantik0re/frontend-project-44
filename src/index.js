@@ -1,13 +1,13 @@
 const playGame = (userName, checkingFunc) => {
-  let correctAnswersCount = 0
+  let correctAnswersCount = 0;
   while (correctAnswersCount < 3) {
     if (checkingFunc() === false) {
-      console.log(`Let's try again, ${userName}!`)
-      return
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
-    correctAnswersCount += 1
+    correctAnswersCount += 1;
   }
-  console.log(`Congratulations, ${userName}!`)
-}
+  console.log(`Congratulations, ${userName}!`);
+};
 
-export default playGame
+export default playGame;
