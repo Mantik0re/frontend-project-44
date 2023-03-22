@@ -1,25 +1,26 @@
-import readlineSync from 'readline-sync';
-
+import randomNumber from '../utils.js';
 
 const randomExpression = () => {
-    let operators = ['+', '-', '*'];
-    let randomIndex = Math.floor(Math.random() * operators.length);
+    const operators = ['+', '-', '*'];
+    const randomIndex = randomNumber(operators.length);
 
-    let firstNumber = Math.floor(Math.random() * 10);
-    let secondNumber = Math.floor(Math.random() * 10);
+    const firstNumber = randomNumber(10);
+    const secondNumber = randomNumber(10);
 
-    switch (operators[randomIndex]) {
-        case '+':
-            return `${firstNumber} + ${secondNumber}`;
-            break;
-        case '-':
-            return `${firstNumber} - ${secondNumber}`;
-            break;
-        case '*':
-            return `${firstNumber} * ${secondNumber}`;
-            break;
+    let operator = operators[randomIndex];
+    return makeExpression(firstNumber, secondNumber, operator);
+};
+
+const makeExpression = (firstNumber, secondNumber, operator) => {
+    switch (operator) {
+    case '+':
+        return `${firstNumber} + ${secondNumber}`;
+    case '-':
+        return `${firstNumber} - ${secondNumber}`;
+    case '*':
+        return `${firstNumber} * ${secondNumber}`;
     }
-}
+};
 
 const executeExpression = (expression) => {
     const parts = expression.split(' ');
@@ -29,35 +30,25 @@ const executeExpression = (expression) => {
 
     let result;
     switch (operator) {
-        case '+':
-            result = left + right;
-            break;
-        case '-':
-            result = left - right;
-            break;
-        case '*':
-            result = left * right;
-            break;
+    case '+':
+        result = left + right;
+        break;
+    case '-':
+        result = left - right;
+        break;
+    case '*':
+        result = left * right;
+        break;
     }
     return result;
-}
-
-
+};
 
 const checkingNumber = () => {
-    console.log('What is the result of the expression?');
-    let checkingNum = randomExpression();
-    console.log(`Question: ${checkingNum}`);
-    const answer = readlineSync.question('Your answer: ');
+    const checkingNum = randomExpression();
+    const question = `What is the result of the expression? \nQuestion: ${checkingNum}`;
+    const answer = executeExpression(checkingNum);
 
-    if (answer == executeExpression(checkingNum)) {
-        console.log('Correct!');
-        return true;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${executeExpression(checkingNum)}'.`);
-        return false;
-    }
-}
-
+    return { 'question': question, 'answer': answer };
+};
 
 export default checkingNumber;

@@ -1,28 +1,19 @@
-import readlineSync from 'readline-sync';
 import randomNumber from '../utils.js';
 
-
 const IsNumberEven = (num) => {
-        if (num % 2 === 0) {
-                return 'yes'
-        } else {
-                return 'no'
-        }
-}
+    if (num % 2 === 0) {
+        return 'yes';
+    } else {
+        return 'no';
+    }
+};
 
 const checkingNumber = () => {
-        console.log('Answer "yes" if the number is even, otherwise answer "no".');
-        let checkingNum = randomNumber()
-        console.log(`Question: ${checkingNum}`);
-        const answer = readlineSync.question('Your answer: ');
+    const checkingNum = randomNumber() || 1;
+    const question = `Answer "yes" if the number is even, otherwise answer "no". \nQuestion: ${checkingNum}`;
+    const answer = IsNumberEven(checkingNum);
 
-        if (answer === IsNumberEven(checkingNum)) {
-                console.log('Correct!');
-                return true;
-        } else {
-                console.log(`'${answer}' is wrong answer ;(. Correct answer was '${IsNumberEven(checkingNum)}'.`);
-                return false;
-        }
-}
+    return { 'question': question, 'answer': answer };
+};
 
 export default checkingNumber;
