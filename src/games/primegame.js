@@ -1,17 +1,12 @@
 // eslint-disable-next-line import/extensions
 import randomNumber from '../utils.js';
 
+// eslint-disable-next-line consistent-return
 const IsNumberEven = (num) => {
-  if (num <= 1) return 'no';
-
-  // eslint-disable-next-line no-plusplus
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return 'no';
-    }
+  if (num % 2 === 0) {
+    return 'yes';
   }
-
-  return 'yes';
+  return 'no';
 };
 
 const checkingNumber = () => {
