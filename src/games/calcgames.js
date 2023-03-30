@@ -19,6 +19,8 @@ const makeExpression = (firstNumber, secondNumber, operator) => {
             return `${firstNumber} - ${secondNumber}`;
         case '*':
             return `${firstNumber} * ${secondNumber}`;
+        default:
+            throw new Error('Operator is not allowed!');
     }
 };
 
@@ -39,6 +41,8 @@ const executeExpression = (expression) => {
         case '*':
             result = left * right;
             break;
+        default:
+            throw new Error('Operator is not allowed!');
     }
     return result;
 };
