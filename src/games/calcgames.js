@@ -15,12 +15,15 @@ const randomExpression = () => {
 
 // eslint-disable-next-line consistent-return
 const makeExpression = (firstNumber, secondNumber, operator) => {
-  if (operator === '+') {
-    return `${firstNumber} + ${secondNumber}`;
-  } if (operator === '-') {
-    return `${firstNumber} - ${secondNumber}`;
-  } if (operator === '*') {
-    return `${firstNumber} * ${secondNumber}`;
+  switch (operator) {
+    case '+':
+      return `${firstNumber} + ${secondNumber}`;
+    case '-':
+      return `${firstNumber} - ${secondNumber}`;
+    case '*':
+      return `${firstNumber} * ${secondNumber}`;
+    default:
+      throw new Error('Operator is not allowed!');
   }
 };
 
@@ -34,17 +37,16 @@ const executeExpression = (expression) => {
   switch (operator) {
     case '+':
       result = left + right;
-      break;
+      return result;
     case '-':
       result = left - right;
-      break;
+      return result;
     case '*':
       result = left * right;
-      break;
+      return result;
     default:
       throw new Error('Operator is not allowed!');
   }
-  return result;
 };
 
 const checkingNumber = () => {
