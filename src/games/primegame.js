@@ -11,7 +11,7 @@ const IsNumberPrime = (num) => {
       return 'no';
     }
   }
-  return 'yes'
+  return 'yes';
 };
 
 const checkingNumber = () => {
