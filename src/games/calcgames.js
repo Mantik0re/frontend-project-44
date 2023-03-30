@@ -13,12 +13,12 @@ const randomExpression = () => {
 
 const makeExpression = (firstNumber, secondNumber, operator) => {
     switch (operator) {
-    case '+':
-        return `${firstNumber} + ${secondNumber}`;
-    case '-':
-        return `${firstNumber} - ${secondNumber}`;
-    case '*':
-        return `${firstNumber} * ${secondNumber}`;
+        case '+':
+            return `${firstNumber} + ${secondNumber}`;
+        case '-':
+            return `${firstNumber} - ${secondNumber}`;
+        case '*':
+            return `${firstNumber} * ${secondNumber}`;
     }
 };
 
@@ -30,15 +30,15 @@ const executeExpression = (expression) => {
 
     let result;
     switch (operator) {
-    case '+':
-        result = left + right;
-        break;
-    case '-':
-        result = left - right;
-        break;
-    case '*':
-        result = left * right;
-        break;
+        case '+':
+            result = left + right;
+            break;
+        case '-':
+            result = left - right;
+            break;
+        case '*':
+            result = left * right;
+            break;
     }
     return result;
 };

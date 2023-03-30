@@ -26,6 +26,10 @@
   },
   "homepage": "https://github.com/Mantik0re/frontend-project-44#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0"
   }
 }

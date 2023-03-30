@@ -1,9 +1,6 @@
 import readlineSync from 'readline-sync';
-// import welcomeMessage from '../src/cli.js';
-
 
 const maxCorrectAnswerCount = 3;
-
 
 const playGame = (userName, checkingFunc) => {
     let correctAnswersCount = 0;
