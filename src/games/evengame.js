@@ -1,17 +1,19 @@
 // eslint-disable-next-line import/extensions
 import randomNumber from '../utils.js';
 
-const IsNumberEven = (num) => {
+const isNumberEven = (num) => {
   if (num % 2 === 0) {
     return 'yes';
   }
-  return 'no';
+  else {
+    return 'no';
+  }
 };
 
 const checkingNumber = () => {
   const checkingNum = randomNumber() || 1;
   const question = `Answer "yes" if the number is even, otherwise answer "no". \nQuestion: ${checkingNum}`;
-  const answer = IsNumberEven(checkingNum);
+  const answer = isNumberEven(checkingNum);
 
   return { question, answer };
 };
