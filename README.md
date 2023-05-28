@@ -1,6 +1,3 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Mantik0re/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Mantik0re/frontend-project-44/actions)
-
 Пакет состоит из пяти текстовых игр.
 Установка пакета с игрой:
  ```
